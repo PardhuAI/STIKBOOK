@@ -1,5 +1,4 @@
 import AISection from "@/components/sections/Home/AiSection";
-import BuiltForIndia from "@/components/sections/Home/BuiltForIndia";
 import EmpowerBusinesses from "@/components/sections/Home/EmpowerBusinesses";
 import FAQ from "@/components/sections/Home/Faqs";
 import FeaturesSection from "@/components/sections/Home/Features";
@@ -10,7 +9,6 @@ export default function Page() {
   return (
     <>
       <Hero />
-      <BuiltForIndia />
       <FeaturesSection />
       <EmpowerBusinesses />
       <AISection />
