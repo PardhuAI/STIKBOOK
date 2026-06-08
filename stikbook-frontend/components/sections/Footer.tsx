@@ -48,8 +48,8 @@ export default function FooterDemo() {
     {
       title: "Legal",
       links: [
-        { label: "Privacy Policy", href: "/" },
-        { label: "Terms of Use", href: "/" },
+        { label: "Privacy Policy", href: "#" },
+        { label: "Terms of Use", href: "#" },
       ],
     },
   ];

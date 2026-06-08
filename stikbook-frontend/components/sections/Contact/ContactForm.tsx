@@ -59,10 +59,11 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
 
     setSending(true);
     try {
-      await fetch(
-        "https://script.google.com/macros/s/AKfycbxbl6UgpZSctX8dOjYLAo-Khj08FVUaDVuzY0RK4PdWlaLzzOSN2RYNbCPKFMx5Q9KP/exec",
-        { method: "POST", mode: "no-cors", body: payload },
-      );
+      const scriptUrl = process.env.NEXT_PUBLIC_CONTACT_SCRIPT_URL;
+      if (!scriptUrl) {
+        throw new Error("Contact form is not configured");
+      }
+      await fetch(scriptUrl, { method: "POST", mode: "no-cors", body: payload });
       setFirstName("");
       setLastName("");
       setEmail("");

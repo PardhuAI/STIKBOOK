@@ -1,10 +1,12 @@
+import type { Perk } from "@/lib/Perksdata";
+
 export default function PerkCard({
   title,
   description,
   icon,
   iconBg,
   iconColor,
-}: any) {
+}: Perk) {
   return (
     <div className="perk-card rounded-2xl p-6 text-left border border-[var(--card-border)] bg-[var(--card-bg)] hover-lift">
       <div
