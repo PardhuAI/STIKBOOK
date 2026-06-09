@@ -74,13 +74,11 @@ export default function Hero() {
             {/* Desktop-to-Mobile Bridge (QR Placeholder) */}
             <div className="hidden md:flex items-center gap-3 bg-white/60 backdrop-blur-sm p-2 pr-4 rounded-xl border border-[var(--card-border)] shadow-sm">
               <div className="bg-white p-1 rounded-lg">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-slate-800">
-                  <rect x="3" y="3" width="7" height="7" rx="1"/>
-                  <rect x="14" y="3" width="7" height="7" rx="1"/>
-                  <rect x="14" y="14" width="7" height="7" rx="1"/>
-                  <rect x="3" y="14" width="7" height="7" rx="1"/>
-                  <path d="M9 9h.01M14 9h.01M9 14h.01M14 14h.01M6 6h.01M18 6h.01M18 18h.01M6 18h.01"/>
-                </svg>
+                <img 
+                  src="/assets/stikbook-qr.png" 
+                  alt="Download Stikbook App QR" 
+                  className="w-10 h-10 object-contain rounded-md" 
+                />
               </div>
               <div className="flex flex-col">
                 <span className="text-[0.7rem] uppercase tracking-wider font-bold text-[var(--green)]">Scan to</span>
