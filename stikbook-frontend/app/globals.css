@@ -29,20 +29,6 @@ body {
   background: #f9fafb; /* or #f9fafb */
 }
 
-body {
-  background: var(--bg1);
-  color: var(--text-color);
-  font-family: var(--font-body);
-}
-
-/* SECTIONS */
-.section-white {
-  background: #ffffff;
-}
-.section-soft {
-  background: #f9fafb; /* or #f9fafb */
-}
-
 
 
 .chip {
