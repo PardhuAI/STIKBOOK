@@ -4,7 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ROOT COLORS */
+/* ROOT COLORS — Light mode only */
 :root {
   --bg1: #ffffff;
   --text-color: #111827;
@@ -13,16 +13,6 @@
   --text-gradient: #297c3b;
   --green: #297c3b;
   --green-light: #63c174;
-}
-
-:root.dark {
-  --bg1: #000000;
-  --text-color: #f1f5f9;
-  --card-bg: rgba(255, 255, 255, 0.08);
-  --card-border: rgba(255, 255, 255, 0.15);
-  --text-gradient: #63c174;
-  --green: #63c174;
-  --green-light: #86efac;
 }
 
 body {
@@ -39,12 +29,21 @@ body {
   background: #f9fafb; /* or #f9fafb */
 }
 
-.dark .section-white {
-  background: #000000;
+body {
+  background: var(--bg1);
+  color: var(--text-color);
+  font-family: var(--font-body);
 }
-.dark .section-soft {
-  background: #0a0a0a;
+
+/* SECTIONS */
+.section-white {
+  background: #ffffff;
 }
+.section-soft {
+  background: #f9fafb; /* or #f9fafb */
+}
+
+
 
 .chip {
   display: inline-flex;
@@ -187,46 +186,7 @@ body {
     --glass-border: rgba(255, 255, 255, 0.6);
     --gold: #d97706;
   }
-  .dark {
-    --background: oklch(0.145 0 0);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(0.205 0 0);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.205 0 0);
-    --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.922 0 0);
-    --primary-foreground: oklch(0.205 0 0);
-    --secondary: oklch(0.269 0 0);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.269 0 0);
-    --muted-foreground: oklch(0.708 0 0);
-    --accent: oklch(0.269 0 0);
-    --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.556 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-    --sidebar: oklch(0.205 0 0);
-    --sidebar-foreground: oklch(0.985 0 0);
-    --sidebar-primary: oklch(0.488 0.243 264.376);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.269 0 0);
-    --sidebar-accent-foreground: oklch(0.985 0 0);
-    --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.556 0 0);
-    --teal: rgb(94, 234, 212);
-    --indigo: rgb(165, 180, 252);
-    --blue: rgb(147, 197, 253);
-    --thruster-core: rgba(147, 197, 253, 0.9);
-    --thruster-glow: rgba(94, 234, 212, 0.7);
-    --glass-border: rgba(255, 255, 255, 0.6);
-    --gold: #fbbf24;
-  }
+
   .icon-ring-sm {
     width: 48px;
     height: 48px;
@@ -415,16 +375,7 @@ body {
     opacity: 0.6;
   }
 
-  /* DARK MODE */
-  .dark .gradient-text {
-    background-image: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0.35),
-      rgba(255, 255, 255, 0.08) 70%,
-      transparent
-    );
-    opacity: 0.85; /* 🔥 increased visibility */
-  }
+
 
   .tick {
     width: 18px;
@@ -469,45 +420,24 @@ body {
     background: rgba(99, 193, 116, 0.15);
     color: #297c3b;
   }
-  .dark .tag-eng {
-    background: rgba(99, 193, 116, 0.15);
-    color: #63c174;
-  }
-
   .tag-design {
     background: rgba(59, 130, 246, 0.12);
     color: #1d4ed8;
-  }
-  .dark .tag-design {
-    background: rgba(59, 130, 246, 0.12);
-    color: #93c5fd;
   }
 
   .tag-mkt {
     background: rgba(245, 158, 11, 0.12);
     color: #b45309;
   }
-  .dark .tag-mkt {
-    background: rgba(245, 158, 11, 0.12);
-    color: #fcd34d;
-  }
 
   .tag-hr {
     background: rgba(168, 85, 247, 0.12);
     color: #6b21a8;
   }
-  .dark .tag-hr {
-    background: rgba(168, 85, 247, 0.12);
-    color: #d8b4fe;
-  }
 
   .tag-ops {
     background: rgba(244, 63, 94, 0.12);
     color: #9f1239;
-  }
-  .dark .tag-ops {
-    background: rgba(244, 63, 94, 0.12);
-    color: #fda4af;
   }
 
   /* ---------- Job type badge (Full-Time / Internship) ---------- */
@@ -520,10 +450,6 @@ body {
     font-size: 0.73rem;
     font-weight: 600;
   }
-  .dark .badge-full {
-    color: #63c174;
-  }
-
   /* ---------- Job list item ---------- */
   .job-item {
     cursor: pointer;
@@ -537,9 +463,6 @@ body {
   .job-item.active {
     border-left-color: var(--green);
     background: var(--card-bg);
-  }
-  .dark .job-item.active {
-    border-left-color: var(--green-light);
   }
 
   /* ---------- Perk card hover ---------- */
@@ -566,12 +489,7 @@ body {
   .section-soft {
     background: #f9fafb;
   }
-  .dark .section-white {
-    background: #000000;
-  }
-  .dark .section-soft {
-    background: #0a0a0a;
-  }
+
 
   /* ---------- Keyframe animations ---------- */
   @keyframes fadeUp {

@@ -10,7 +10,7 @@ type NavItem = { label: string; href: string };
 const NAV_ITEMS: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "Roadmap", href: "/roadmap" },
-  { label: "Profile Types", href: "/profile-types" },
+  { label: "Profiles", href: "/profile-types" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
   { label: "Careers", href: "/careers" },
@@ -23,8 +23,8 @@ function Logo() {
       aria-label="Stikbook home"
       className="group flex items-center justify-center rounded-full"
       style={{
-        width: "64px",
-        height: "64px",
+        width: "80px",
+        height: "80px",
         background: "var(--bg1)",
         border: "1px solid var(--card-border)",
         boxShadow: "0 8px 32px rgba(0,0,0,0.15)",
@@ -33,7 +33,7 @@ function Logo() {
       <img
         src="/assets/favicon.png"
         alt="Stikbook"
-        className="h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-110"
+        className="h-16 w-16 object-contain transition-transform duration-300 group-hover:scale-110"
       />
     </Link>
   );
@@ -71,9 +71,9 @@ export default function Header() {
   const rightItems = NAV_ITEMS.slice(3, 6);
 
   return (
-    <header className="fixed top-6 inset-x-0 z-50 px-3 sm:px-4">
+    <header className="fixed top-6 inset-x-0 z-50 px-3">
       <div
-        className="relative flex items-center justify-between h-[72px] rounded-full px-4 md:px-6 backdrop-blur-xl max-w-[1100px] mx-auto"
+        className="relative flex items-center justify-center gap-6 h-[52px] rounded-full px-4 md:px-6 backdrop-blur-xl w-fit mx-auto"
         style={{
           background: "color-mix(in srgb, var(--bg1) 75%, transparent)",
           border: "1px solid var(--card-border)",
@@ -119,7 +119,7 @@ export default function Header() {
         </div>
 
         {/* Desktop: Left nav | center logo | right nav */}
-        <nav className="hidden md:flex items-center gap-1 lg:gap-2 flex-1 justify-end">
+        <nav className="hidden md:flex items-center gap-1 lg:gap-2">
           {leftItems.map((item) => (
             <NavLink key={item.href} {...item} />
           ))}
@@ -129,7 +129,7 @@ export default function Header() {
           <Logo />
         </div>
 
-        <nav className="hidden md:flex items-center gap-1 lg:gap-2 flex-1 justify-start">
+        <nav className="hidden md:flex items-center gap-1 lg:gap-2">
           {rightItems.map((item) => (
             <NavLink key={item.href} {...item} />
           ))}

@@ -2,7 +2,6 @@ import Header from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import "./globals.css";
 import { Metadata } from "next";
-import ThemeScript from "@/components/common/ThemeScript";
 import { Syne, DM_Sans } from "next/font/google";
 
 const syne = Syne({
@@ -37,9 +36,6 @@ export default function RootLayout({
       className={`${syne.variable} ${dmSans.variable}`}
       suppressHydrationWarning
     >
-      <head>
-        <ThemeScript />
-      </head>
       <body>
         <Header />
         {children}
