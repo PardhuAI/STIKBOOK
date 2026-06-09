@@ -71,17 +71,17 @@ export default function Hero() {
               Download the App
             </a>
             
-            {/* Desktop-to-Mobile Bridge (QR Placeholder) */}
-            <div className="hidden md:flex items-center gap-3 bg-white/60 backdrop-blur-sm p-2 pr-4 rounded-xl border border-[var(--card-border)] shadow-sm">
-              <div className="bg-white p-1 rounded-lg">
+            {/* Desktop-to-Mobile Bridge (QR Code) */}
+            <div className="group hidden md:flex items-center gap-3 bg-white/60 backdrop-blur-sm p-2 pr-4 rounded-xl border border-[var(--card-border)] shadow-sm cursor-pointer hover:bg-white/90 transition-all duration-300">
+              <div className="bg-white p-1 rounded-lg relative z-50 transition-all duration-300 origin-bottom-left group-hover:scale-[4] group-hover:-translate-y-2 group-hover:translate-x-2 group-hover:shadow-2xl">
                 <img 
                   src="/assets/stikbook-qr.png" 
                   alt="Download Stikbook App QR" 
-                  className="w-10 h-10 object-contain rounded-md" 
+                  className="w-10 h-10 object-contain rounded-md transition-opacity" 
                 />
               </div>
-              <div className="flex flex-col">
-                <span className="text-[0.7rem] uppercase tracking-wider font-bold text-[var(--green)]">Scan to</span>
+              <div className="flex flex-col z-10 transition-opacity duration-300 group-hover:opacity-30">
+                <span className="text-[0.7rem] uppercase tracking-wider font-bold text-[var(--green)]">Hover to scan</span>
                 <span className="text-sm font-semibold text-slate-800 leading-tight">Download</span>
               </div>
             </div>
