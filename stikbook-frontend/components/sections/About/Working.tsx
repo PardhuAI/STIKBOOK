@@ -19,7 +19,7 @@ export default function WorkingSection() {
     {
       title: "Post, Share & Go Live",
       description:
-        "Share posts and quiks. Our AI instantly checks your content so it's safe and ready for the world — no delays, no drama.",
+        "Share posts and quiks (short videos). Our AI instantly checks your content so it's safe and ready for the world — no delays, no drama.",
       image:
         "https://images.unsplash.com/photo-1578417618193-3726d6f2fef6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       icon: "2",

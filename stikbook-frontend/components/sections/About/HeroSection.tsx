@@ -10,7 +10,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({
   ctaUrl = "/download/",
-  storyUrl = "#mission",
+  storyUrl = "#working",
 }: HeroSectionProps) {
   const [mounted, setMounted] = useState(false);
   const revealRef = useRef<HTMLDivElement>(null);
@@ -24,51 +24,64 @@ export default function HeroSection({
   }
 
   return (
-    <section className="flex flex-col section-white items-center justify-center text-center px-6 py-24 relative overflow-hidden section-white">
-      <div
-        ref={revealRef}
-        className="mx-auto reveal relative z-10"
-        style={{ transitionDelay: "0.1s" }}
-      >
-        {/* Chips Container */}
-        <div className="flex justify-center gap-3 flex-wrap mb-8">
-          <Chip icon={<SmileFaceIcon />} label="Social Platform" />
-          <Chip icon={<LockIcon />} label="AI-Powered Safety" />
-          <Chip icon={<StarIcon />} label="Hidden Talent" />
-        </div>
+    <section className="relative w-full min-h-[90vh] md:min-h-screen flex items-center overflow-hidden bg-white pt-24 pb-16">
+      {/* Background Image Layer */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/assets/about-hero-new.jpg"
+          alt="Stikbook User Journey"
+          className="w-full h-full object-cover object-bottom md:object-right"
+        />
+        {/* Responsive Gradient Overlay for Text Readability */}
+        {/* On mobile: white gradient from bottom to top. On desktop: white gradient from left to right */}
+        <div className="absolute inset-0 bg-gradient-to-t from-white/95 via-white/80 to-transparent md:bg-gradient-to-r md:from-white md:via-white/90 md:to-transparent/20"></div>
+      </div>
 
-        {/* Main Heading */}
-        <h1 className="font-heading text-4xl font-syne md:text-6xl font-semibold leading-tight mb-6">
-          Where <span style={{ color: "var(--text-gradient)" }}>Talent</span>
-          <br />
-          Finds Its Stage
-        </h1>
+      {/* Content Container */}
+      <div className="max-w-7xl mx-auto w-full px-6 relative z-10 flex flex-col justify-end md:justify-center h-full">
+        <div
+          ref={revealRef}
+          className="reveal w-full max-w-2xl text-center md:text-left mt-auto md:mt-0"
+          style={{ transitionDelay: "0.1s" }}
+        >
+          {/* Chips Container */}
+          <div className="flex justify-center md:justify-start gap-3 flex-wrap mb-6">
+            <Chip icon={<SmileFaceIcon />} label="Social Platform" />
+            <Chip icon={<LockIcon />} label="AI-Powered Safety" />
+            <Chip icon={<StarIcon />} label="Hidden Talent" />
+          </div>
 
-        {/* Description */}
-        <p className="text-[0.95rem] max-w-2xl mb-8 mx-auto leading-relaxed">
-          Stikbook is more than a social platform — it's a safe, AI-curated
-          space where individuals shine, businesses grow, and hidden talent
-          finally gets the spotlight it deserves.
-        </p>
+          {/* Main Heading */}
+          <h1 className="font-heading text-4xl md:text-6xl font-syne font-bold leading-tight mb-6 text-slate-900">
+            Where <span style={{ color: "var(--text-gradient)" }}>Talent</span>
+            <br className="hidden md:block" /> Finds Its Stage
+          </h1>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-wrap gap-4 justify-center">
-          <Link
-            href={ctaUrl}
-            className="font-heading flex items-center justify-center px-7 py-3 rounded-full text-white"
-            style={{
-              background: "var(--text-gradient)",
-              boxShadow: "0 6px 30px rgba(99, 255, 141, 0.35)",
-            }}
-          >
-            Get the App
-          </Link>
-          <Link
-            href={storyUrl}
-            className="px-8 py-3.5 rounded-full font-semibold glass-sm hover:bg-white/20 transition-all duration-300"
-          >
-            Our Story ↓
-          </Link>
+          {/* Description */}
+          <p className="text-[1rem] md:text-lg text-slate-800 font-medium max-w-xl mb-8 leading-relaxed mx-auto md:mx-0">
+            Stikbook is more than a social platform — it's a safe, AI-curated
+            space where individuals shine, businesses grow, and hidden talent
+            finally gets the spotlight it deserves.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+            <Link
+              href={ctaUrl}
+              className="font-heading flex items-center justify-center px-8 py-3.5 rounded-full text-white hover:scale-105 transition-transform shadow-[0_8px_20px_rgba(99,193,116,0.3)]"
+              style={{
+                background: "var(--text-gradient)",
+              }}
+            >
+              Get the App
+            </Link>
+            <Link
+              href={storyUrl}
+              className="px-8 py-3.5 rounded-full font-semibold bg-white/70 backdrop-blur-md border border-[var(--card-border)] hover:bg-white transition-all shadow-sm text-slate-800"
+            >
+              Our Story ↓
+            </Link>
+          </div>
         </div>
       </div>
     </section>
@@ -78,8 +91,8 @@ export default function HeroSection({
 // Chip Component
 function Chip({ icon, label }: { icon: React.ReactNode; label: string }) {
   return (
-    <span className="chip">
-      {icon}
+    <span className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-white/80 backdrop-blur-md border border-[var(--card-border)] text-slate-700 shadow-sm">
+      <span className="text-[var(--green)]">{icon}</span>
       {label}
     </span>
   );

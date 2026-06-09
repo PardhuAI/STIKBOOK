@@ -528,4 +528,9 @@ body {
     transform: translateY(-8px);
     box-shadow: 0 25px 70px rgba(99, 193, 116, 0.18);
   }
+
+  *:focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 2px;
+  }
 }

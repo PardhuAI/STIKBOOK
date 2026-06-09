@@ -137,12 +137,29 @@ export default function AISection() {
                 <span style={{ color: "var(--text-gradient)" }}>Safer.</span>
               </h2>
 
-              <p className="font-body text-[0.95rem] leading-relaxed mb-8">
+              <p className="font-body text-[0.95rem] leading-relaxed mb-6">
                 Our AI compliance layer works silently in the background —
                 scanning every post, quik, and comment to ensure violent, adult,
                 and harmful content never reaches our community. Stikbook is
                 built for every age, every background.
               </p>
+
+              {/* Trust Badges */}
+              <div className="flex items-center gap-4 mb-8">
+                <div className="flex items-center gap-2 bg-[var(--green)]/10 px-3 py-1.5 rounded-full border border-[var(--green)]/20">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                  </svg>
+                  <span className="text-[0.75rem] font-bold text-[var(--green)] uppercase tracking-wider">End-to-End Encrypted</span>
+                </div>
+                <div className="flex items-center gap-2 bg-[var(--green)]/10 px-3 py-1.5 rounded-full border border-[var(--green)]/20">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  </svg>
+                  <span className="text-[0.75rem] font-bold text-[var(--green)] uppercase tracking-wider">COPPA Compliant</span>
+                </div>
+              </div>
 
               <div className="space-y-4">
                 {/* ITEM 1 */}

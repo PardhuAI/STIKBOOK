@@ -35,7 +35,7 @@ const PROFILE_DATA: Record<ProfileType, ProfileData> = {
       "https://images.unsplash.com/photo-1621184078811-1120e2f1fc9e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNvbnRlbnQlMjBjcmVhdG9yfGVufDB8fDB8fHwy",
     bullets: [
       "Showcase your talent portfolio",
-      "Post photos, videos & Quiks",
+      "Post photos, videos & Quiks (Short Videos)",
       "Build a following of fans",
       "Earn Stikcoins for every post",
       "Access exclusive Stikdeals",
